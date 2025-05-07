@@ -918,11 +918,11 @@
 
 /*Drivers for LCD devices connected via SPI/parallel port*/
 #define LV_USE_ST7735		0
-#define LV_USE_ST7789		0
+#define LV_USE_ST7789		1
 #define LV_USE_ST7796		0
-#define LV_USE_ILI9341		1
+#define LV_USE_ILI9341		0
 
-#define LV_USE_GENERIC_MIPI (LV_USE_ST7735 | LV_USE_ST7789 | LV_USE_ST7796 | LV_USE_ILI9341)
+#define LV_USE_GENERIC_MIPI (LV_USE_ST7789 | LV_USE_ST7735 | LV_USE_ST7796 | LV_USE_ILI9341)
 
 /* LVGL Windows backend */
 #define LV_USE_WINDOWS    0

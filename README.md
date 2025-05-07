@@ -1,3 +1,7 @@
+# Fork of Aura by Ageitgey (https://github.com/Surrey-Homeware/Aura)
+
+Existence of this fork is to use the code on ESP32 CYD variation 3.2inch ESP32-2432S032
+
 # Aura
 
 Aura is a simple weather widget that runs on ESP32-2432S028R ILI9341 devices with a 2.8" screen. These devices are sometimes called a "CYD" or Cheap Yellow Display.
@@ -42,3 +46,7 @@ The icons are not included in that license. See "Thanks" below for details on th
 	- [WifiManager](https://github.com/tzapu/WiFiManager)
 	- [XPT2046_Touchscreen](https://github.com/PaulStoffregen/XPT2046_Touchscreen)
 	- [lvgl](https://lvgl.io/)
+
+### TomaB wish to thanks
+
+- Ageitgey [Aura](https://github.com/Surrey-Homeware/Aura) original creator of this cool project
