@@ -37,9 +37,9 @@
 #define SCREEN_HEIGHT 320
 #define DRAW_BUF_SIZE (SCREEN_WIDTH * SCREEN_HEIGHT / 10 * (LV_COLOR_DEPTH / 8))
 
-#define LATITUDE_DEFAULT "48.5124"
-#define LONGITUDE_DEFAULT "2.2107"
-#define LOCATION_DEFAULT "Paris"
+#define LATITUDE_DEFAULT "48.1102"
+#define LONGITUDE_DEFAULT "7.3583"
+#define LOCATION_DEFAULT "Krautergersheim"
 #define DEFAULT_CAPTIVE_SSID "Aura"
 #define UPDATE_INTERVAL 600000UL  // 10 minutes
 
@@ -162,15 +162,19 @@ int day_of_week(int y, int m, int d) {
 String hour_of_day(int hour) {
   if(hour < 0 || hour > 23) return String("Heure invalide");
 
-  if(hour == 0)   return String("12am");
-  if(hour == 12)  return String("Noon");
+  // 24h format 
+  return String(hour < 10 ? "0" : "") + String(hour) + "h";
 
-  bool isMorning = (hour < 12);
-  String suffix = isMorning ? "am" : "pm";
+  // TODO: Add parameter to use 24h or 12h format !
+  // if(hour == 0)   return String("12am");
+  // if(hour == 12)  return String("Noon");
 
-  int displayHour = hour % 12;
+  // bool isMorning = (hour < 12);
+  // String suffix = isMorning ? "am" : "pm";
 
-  return String(displayHour) + suffix;
+  // int displayHour = hour % 12;
+
+  // return String(displayHour) + suffix;
 }
 
 String urlencode(const String &str) {
@@ -195,12 +199,17 @@ static void update_clock(lv_timer_t *timer) {
   if (!getLocalTime(&timeinfo)) return;
 
   char buf[16];
-  int hour = timeinfo.tm_hour % 12;
+  // TODO: add 24h/12h format parameter
+  //int hour = timeinfo.tm_hour % 12;
+  int hour = timeinfo.tm_hour;
   int minute = timeinfo.tm_min;
-  const char *ampm = (timeinfo.tm_hour < 12) ? "am" : "pm";
+  //const char *ampm = (timeinfo.tm_hour < 12) ? "am" : "pm";
 
-  if(hour == 0) hour = 12;
-  snprintf(buf, sizeof(buf), "%d:%02d%s", hour, minute, ampm);
+  // if(hour == 0) hour = 12;
+  // snprintf(buf, sizeof(buf), "%d:%02d%s", hour, minute, ampm);
+
+  // Format in 24-hour notation (HH:MM)
+  snprintf(buf, sizeof(buf), "%02d:%02d", hour, minute);
 
   lv_label_set_text(lbl_clock, buf);
 }
