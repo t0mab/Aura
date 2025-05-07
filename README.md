@@ -1,4 +1,4 @@
-# Fork of Aura by Ageitgey (https://github.com/Surrey-Homeware/Aura)
+# Fork of Aura by Adam Geitgey (https://github.com/Surrey-Homeware/Aura)
 
 Existence of this fork is to use the code on ESP32 CYD variation 3.2inch ESP32-2432S032
 
@@ -49,4 +49,4 @@ The icons are not included in that license. See "Thanks" below for details on th
 
 ### TomaB wish to thanks
 
-- Ageitgey [Aura](https://github.com/Surrey-Homeware/Aura) original creator of this cool project
+- Adam Geitgey [Aura](https://github.com/Surrey-Homeware/Aura) original creator of this cool project
